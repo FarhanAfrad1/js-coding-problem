@@ -55,4 +55,52 @@ function removeDuplicate(arr){
     }
     return newArr
 }
-console.log(removeDuplicate([1,1,2,2,2,3,4,5,6,6,6,7,7,7]))
+// console.log(removeDuplicate([1,1,2,2,2,3,4,5,6,6,6,7,7,7]))
+
+// find the max element from an array
+function maxElement(arr){
+    let max = arr[0];
+    for(let i = 1; i<arr.length; i++){
+        if(arr[i]>max){
+            max = arr[i]
+        }
+        else continue;
+    }
+    return max;
+}
+
+// console.log(maxElement([90,65,66,68,72,78,60]))
+// find the cheapest phone from an array of phone object
+const phones = [
+    {name:'s25Ultra',brand:'samsung',price:120000,ram:'7gb'},
+    {name:'16plus',brand:'iphone',price:140000,ram:'8gb'},
+    {name:'iqoo+',brand:'vivo',price:80000,ram:'6gb'},
+    {name:'note14',brand:'xioami',price:50000,ram:'8gb'},
+    {name:'13',brand:'oneplus',price:49000,ram:'16gb'},
+]
+function findCheapestPhone(phones){
+    let cheapest = phones[0].price;
+    for(let phone in phones){
+        
+        if(phones[phone].price < cheapest){
+            details = `price:${phones[phone].price} name: ${phones[phone].name} and brand: ${phones[phone].brand}`
+        }
+    }
+    console.log(details)
+}
+// findCheapestPhone(phones)
+// calculate total price of cart
+const cart = [
+    {name:'shampoo', price:300, quantity:1},
+    {name:'soup', price:80, quantity:3},
+    {name:'meat', price:700, quantity:1},
+    {name:'chicken', price:300, quantity:2}
+]
+function totalOfCart(cart){
+    let total = 0; 
+    for(let product of cart){
+        total += product.price * product.quantity;
+    }
+    console.log(total);
+}
+totalOfCart(cart);
